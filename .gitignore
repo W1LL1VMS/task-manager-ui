@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dépendances et build
+node_modules
+dist
+dist-ssr
+*.local
+
+# Variables d'environnement (jamais commitées)
+.env
+
+# Dossiers générés par les outils d'assistance IA
+.claude/
+.cursor/
+.agents/
+.devin/
+
+# Éditeurs et système
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
