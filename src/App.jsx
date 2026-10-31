@@ -1,7 +1,22 @@
+import { Navigate, Route, Routes } from "react-router-dom";
+import { ProtectedRoute, PublicOnlyRoute } from "./components/RouteGuards.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import RegisterPage from "./pages/RegisterPage.jsx";
+import DashboardPage from "./pages/DashboardPage.jsx";
+
 export default function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950">
-      <h1 className="text-4xl font-bold text-cyan-400">Tailwind fonctionne</h1>
-    </div>
-  )
+    <Routes>
+      <Route element={<PublicOnlyRoute />}>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Route>
+
+      <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<DashboardPage />} />
+      </Route>
+
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
 }
