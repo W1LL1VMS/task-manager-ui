@@ -79,7 +79,9 @@ src/
 
 ![Connexion](docs/screenshots/login.png)
 
-![Création d'une tâche](docs/screenshots/modal.png)
+![Tableau de bord](docs/screenshots/Dashboard2.png)
+
+![Création d'une tâche](docs/screenshots/creation_tache.png)
 
 ## Limites actuelles
 
