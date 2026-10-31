@@ -1,8 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { ProtectedRoute, PublicOnlyRoute } from "./components/RouteGuards.jsx";
+import { AdminRoute, ProtectedRoute, PublicOnlyRoute } from "./components/RouteGuards.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
+import AdminPage from "./pages/AdminPage.jsx";
 
 export default function App() {
   return (
@@ -14,6 +15,9 @@ export default function App() {
 
       <Route element={<ProtectedRoute />}>
         <Route path="/" element={<DashboardPage />} />
+        <Route element={<AdminRoute />}>
+          <Route path="/admin" element={<AdminPage />} />
+        </Route>
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />

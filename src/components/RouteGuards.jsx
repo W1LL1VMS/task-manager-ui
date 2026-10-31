@@ -34,3 +34,11 @@ export function PublicOnlyRoute() {
   if (user) return <Navigate to={location.state?.from?.pathname ?? "/"} replace />;
   return <Outlet />;
 }
+
+// Réservé aux administrateurs (à placer à l'intérieur d'une ProtectedRoute)
+export function AdminRoute() {
+  const { user } = useAuth();
+
+  if (user?.role !== "ADMIN") return <Navigate to="/" replace />;
+  return <Outlet />;
+}
